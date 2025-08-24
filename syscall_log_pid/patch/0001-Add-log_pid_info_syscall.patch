@@ -1,0 +1,55 @@
+From ec11328834517cab41553bdccc71d6e6fb687ab4 Mon Sep 17 00:00:00 2001
+From: Francisco <fco.torres12@gmail.com>
+Date: Thu, 21 Aug 2025 23:36:55 -0400
+Subject: [PATCH] Add log_pid_info_syscall
+
+---
+ arch/x86/entry/syscalls/syscall_64.tbl | 1 +
+ include/linux/syscalls.h               | 2 ++
+ kernel/sys.c                           | 7 +++++++
+ 3 files changed, 10 insertions(+)
+
+diff --git a/arch/x86/entry/syscalls/syscall_64.tbl b/arch/x86/entry/syscalls/syscall_64.tbl
+index 7e8d46f4147f..ab2e2d235325 100644
+--- a/arch/x86/entry/syscalls/syscall_64.tbl
++++ b/arch/x86/entry/syscalls/syscall_64.tbl
+@@ -383,6 +383,7 @@
+ 459	common	lsm_get_self_attr	sys_lsm_get_self_attr
+ 460	common	lsm_set_self_attr	sys_lsm_set_self_attr
+ 461	common	lsm_list_modules	sys_lsm_list_modules
++462 common  log_pid_info        sys_log_pid_info
+ 
+ #
+ # Due to a historical design error, certain syscalls are numbered differently
+diff --git a/include/linux/syscalls.h b/include/linux/syscalls.h
+index 77eb9b0e7685..cc982173e1d4 100644
+--- a/include/linux/syscalls.h
++++ b/include/linux/syscalls.h
+@@ -1188,6 +1188,8 @@ asmlinkage long sys_ni_syscall(void);
+ 
+ asmlinkage long sys_ni_posix_timers(void);
+ 
++asmlinkage long sys_log_pid_info(void);
++
+ /*
+  * Kernel code should not call syscalls (i.e., sys_xyzyyz()) directly.
+  * Instead, use one of the functions which work equivalently, such as
+diff --git a/kernel/sys.c b/kernel/sys.c
+index f8e543f1e38a..d3096dfb7487 100644
+--- a/kernel/sys.c
++++ b/kernel/sys.c
+@@ -2921,4 +2921,11 @@ COMPAT_SYSCALL_DEFINE1(sysinfo, struct compat_sysinfo __user *, info)
+ 		return -EFAULT;
+ 	return 0;
+ }
++
++SYSCALL_DEFINE0(log_pid_info) {
++    struct timespec64 ts;
++    ktime_get_rel_ts64(&ts);
++    printk(KERN_INFO "Syscall log_pid_info: PID=%d UID=%d Time=%lld.%09ld\n", current->pid, current_uid().val, (s64)ts.tv_sec, ts.tv_nsec);
++   return 0;
++} 
+ #endif /* CONFIG_COMPAT */
+-- 
+2.43.0
+

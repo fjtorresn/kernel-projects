@@ -1,0 +1,25 @@
+From a523f8edc84665da0263a24deb9ae7a0215a7229 Mon Sep 17 00:00:00 2001
+From: Francisco <fco.torres12@gmail.com>
+Date: Fri, 22 Aug 2025 15:47:23 -0400
+Subject: [PATCH] Fix ktime_get_real_ts64 reference
+
+---
+ kernel/sys.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/kernel/sys.c b/kernel/sys.c
+index d3096dfb7487..fae010fb2268 100644
+--- a/kernel/sys.c
++++ b/kernel/sys.c
+@@ -2924,7 +2924,7 @@ COMPAT_SYSCALL_DEFINE1(sysinfo, struct compat_sysinfo __user *, info)
+ 
+ SYSCALL_DEFINE0(log_pid_info) {
+     struct timespec64 ts;
+-    ktime_get_rel_ts64(&ts);
++    ktime_get_real_ts64(&ts);
+     printk(KERN_INFO "Syscall log_pid_info: PID=%d UID=%d Time=%lld.%09ld\n", current->pid, current_uid().val, (s64)ts.tv_sec, ts.tv_nsec);
+    return 0;
+ } 
+-- 
+2.43.0
+
