@@ -1,0 +1,1 @@
+savedcmd_/home/francisco/Desktop/projects/2_better_hello_kernel/modules.order := {   echo /home/francisco/Desktop/projects/2_better_hello_kernel/hello.o; :; } > /home/francisco/Desktop/projects/2_better_hello_kernel/modules.order

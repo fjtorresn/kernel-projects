@@ -1,0 +1,1 @@
+savedcmd_/home/francisco/kernel-projects/03_gpio_control/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/francisco/kernel-projects/03_gpio_control/Module.symvers -T /home/francisco/kernel-projects/03_gpio_control/modules.order -i Module.symvers -e 
