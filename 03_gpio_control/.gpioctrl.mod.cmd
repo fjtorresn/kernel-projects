@@ -1,1 +1,0 @@
-savedcmd_/home/francisco/kernel-projects/03_gpio_control/gpioctrl.mod := printf '%s\n'   gpioctrl.o | awk '!x[$$0]++ { print("/home/francisco/kernel-projects/03_gpio_control/"$$0) }' > /home/francisco/kernel-projects/03_gpio_control/gpioctrl.mod

@@ -1,1 +1,0 @@
-savedcmd_/home/francisco/Desktop/projects/2_better_hello_kernel/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/francisco/Desktop/projects/2_better_hello_kernel/Module.symvers -T /home/francisco/Desktop/projects/2_better_hello_kernel/modules.order -i Module.symvers -e 

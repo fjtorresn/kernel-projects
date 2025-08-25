@@ -1,1 +1,0 @@
-savedcmd_/home/francisco/Desktop/projects/2_better_hello_kernel/hello.mod := printf '%s\n'   hello.o | awk '!x[$$0]++ { print("/home/francisco/Desktop/projects/2_better_hello_kernel/"$$0) }' > /home/francisco/Desktop/projects/2_better_hello_kernel/hello.mod
