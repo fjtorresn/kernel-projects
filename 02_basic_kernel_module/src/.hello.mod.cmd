@@ -1,0 +1,1 @@
+savedcmd_/home/francisco/kernel-projects/02_basic_kernel_module/src/hello.mod := printf '%s\n'   hello.o | awk '!x[$$0]++ { print("/home/francisco/kernel-projects/02_basic_kernel_module/src/"$$0) }' > /home/francisco/kernel-projects/02_basic_kernel_module/src/hello.mod
