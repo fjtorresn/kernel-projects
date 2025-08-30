@@ -1,1 +1,0 @@
-savedcmd_/home/francisco/kernel-projects/02_basic_kernel_module/src/modules.order := {   echo /home/francisco/kernel-projects/02_basic_kernel_module/src/hello.o; :; } > /home/francisco/kernel-projects/02_basic_kernel_module/src/modules.order
