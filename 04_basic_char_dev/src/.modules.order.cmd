@@ -1,1 +1,0 @@
-savedcmd_/home/francisco/kernel-projects/04_basic_char_dev/src/modules.order := {   echo /home/francisco/kernel-projects/04_basic_char_dev/src/mycdev.o; :; } > /home/francisco/kernel-projects/04_basic_char_dev/src/modules.order

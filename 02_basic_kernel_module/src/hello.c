@@ -17,12 +17,12 @@ MODULE_VERSION("0.1");
 
 // __init and __exit are just for readbility
 static int __init hello_init(void) {
-    printk("Hello from the kernel\n");
+    printk(KERN_INFO "Hello from the kernel\n");
     return 0;
 }
 
 static void __exit hello_exit(void) {
-    printk("Goodbye from the kernel\n");
+    printk(KERN_INFO "Goodbye from the kernel\n");
 }
 
 module_init(hello_init);

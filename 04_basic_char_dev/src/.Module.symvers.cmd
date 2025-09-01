@@ -1,1 +1,0 @@
-savedcmd_/home/francisco/kernel-projects/04_basic_char_dev/src/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/francisco/kernel-projects/04_basic_char_dev/src/Module.symvers -T /home/francisco/kernel-projects/04_basic_char_dev/src/modules.order -i Module.symvers -e 
