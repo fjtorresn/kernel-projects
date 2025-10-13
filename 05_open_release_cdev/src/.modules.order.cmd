@@ -1,0 +1,1 @@
+savedcmd_/home/francisco/kernel-projects/05_open_release_cdev/src/modules.order := {   echo /home/francisco/kernel-projects/05_open_release_cdev/src/mycdev.o; :; } > /home/francisco/kernel-projects/05_open_release_cdev/src/modules.order

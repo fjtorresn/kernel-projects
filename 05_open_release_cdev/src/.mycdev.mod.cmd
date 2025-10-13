@@ -1,0 +1,1 @@
+savedcmd_/home/francisco/kernel-projects/05_open_release_cdev/src/mycdev.mod := printf '%s\n'   mycdev.o | awk '!x[$$0]++ { print("/home/francisco/kernel-projects/05_open_release_cdev/src/"$$0) }' > /home/francisco/kernel-projects/05_open_release_cdev/src/mycdev.mod
